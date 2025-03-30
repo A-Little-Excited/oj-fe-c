@@ -3,7 +3,20 @@ import { createRouter, createWebHistory } from 'vue-router'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-
+    {
+      path: "/", 
+      redirect: "/c-oj/login",
+    },
+    {
+      path: "/c-oj/home", 
+      name: "home",
+      component: () => import("@/views/Home.vue"),
+    },
+    {
+      path: "/c-oj/login",
+      name: "login",
+      component: () => import("@/views/Login.vue"),
+    },
   ]
 })
 
