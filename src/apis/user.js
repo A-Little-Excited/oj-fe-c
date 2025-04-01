@@ -22,3 +22,10 @@ export function logoutService() {
     method: "delete",
   });
 }
+
+export function getUserInfoService() {
+  return service({
+    url: "/user/info",
+    method: "get",
+  });
+}

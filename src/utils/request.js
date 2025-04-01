@@ -27,7 +27,7 @@ service.interceptors.response.use(
       // 当 token 过期或失效时, 需要将前端存储的旧 token 进行删除, 并跳转回登录页面重新登录
       ElMessage.error(msg);
       removeToken();
-      router.push('/oj/login');
+      // C 端页面部分功能游客身份也可以使用, 因此需要重新登录的用户无需跳转到登录页, 保持原状即可
 
       // reject 就相当于 Java 中抛出异常
       return Promise.reject(new Error(msg));
